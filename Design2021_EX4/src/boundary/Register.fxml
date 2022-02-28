@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainScreen" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.Register">
+   <children>
+      <ImageView fitHeight="673.0" fitWidth="962.0" layoutX="29.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../photos/plane.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="240.0" layoutY="250.0" opacity="0.7" prefHeight="389.0" prefWidth="652.0" style="-fx-background-color: white;">
+         <children>
+            <VBox layoutX="180.0" layoutY="-8.0" prefHeight="400.0" prefWidth="477.0">
+               <children>
+                  <HBox prefHeight="69.0" prefWidth="446.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="49.0" prefWidth="290.0">
+                           <children>
+                              <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSPORT NUMBER" wrappingWidth="179.06542658805847">
+                                 <font>
+                                    <Font name="Aharoni Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="passport" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="49.0" prefWidth="179.0">
+                           <children>
+                              <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRIMARY CITIZENSHIP" wrappingWidth="215.06542658805847">
+                                 <font>
+                                    <Font name="Aharoni Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="citizenship" prefHeight="26.0" prefWidth="182.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="71.0" prefWidth="435.0" spacing="20.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIRST NAME" wrappingWidth="179.06542658805847">
+                                 <font>
+                                    <Font name="Aharoni Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="fname" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="50.0" prefWidth="227.0">
+                           <children>
+                              <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAST NAME" wrappingWidth="179.06542658805847">
+                                 <font>
+                                    <Font name="Aharoni Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="lname" prefHeight="26.0" prefWidth="231.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="70.0" prefWidth="435.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL" wrappingWidth="179.06542658805847">
+                                 <font>
+                                    <Font name="Aharoni Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="email" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="50.0" prefWidth="251.0">
+                           <children>
+                              <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH" wrappingWidth="179.06542658805847">
+                                 <font>
+                                    <Font name="Aharoni Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <DatePicker fx:id="date" prefHeight="26.0" prefWidth="246.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <VBox prefHeight="86.0" prefWidth="446.0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text fill="#00547b" lineSpacing="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" wrappingWidth="179.06542658805847">
+                           <font>
+                              <Font name="Aharoni Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <PasswordField fx:id="password" prefHeight="26.0" prefWidth="407.0">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets right="10.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="436.0" text="Digits only" textAlignment="CENTER" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox prefHeight="40.0" prefWidth="457.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#createAccount" prefHeight="49.0" prefWidth="458.0" style="-fx-background-color: #00547b;" text="CREATE ACCOUNT" textFill="WHITE">
+                           <font>
+                              <Font name="Aharoni Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+      <VBox layoutX="131.0" layoutY="197.0" opacity="0.8" prefHeight="509.0" prefWidth="275.0" spacing="20.0" style="-fx-background-color: #00547b; -fx-border-color: grey;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTER" textAlignment="CENTER" wrappingWidth="272.3835754394531">
+               <font>
+                  <Font name="Aharoni Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" text="AL-HAIFA" textAlignment="CENTER" wrappingWidth="280.53676986694336">
+               <font>
+                  <Font name="Aharoni Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <effect>
+            <Bloom />
+         </effect>
+      </VBox>
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="74.0" style="-fx-background-color: #00547b;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Aharoni Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

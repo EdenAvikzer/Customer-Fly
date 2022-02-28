@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainScreen" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.ItemsReport">
+   <children>
+      <Text layoutX="139.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ITEMS IN FLIGHT REPORT" wrappingWidth="722.1715087890625">
+         <font>
+            <Font name="Aharoni Bold" size="60.0" />
+         </font>
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.003816823126705504" endY="0.3206106724629875" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.015438596718013287" blue="0.021052632480859756" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2823529541492462" green="0.7450980544090271" blue="0.9176470637321472" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <VBox layoutX="266.0" layoutY="160.0" prefHeight="266.0" prefWidth="395.0" spacing="10.0">
+         <children>
+            <Text fill="#00547b" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter parameters:" textAlignment="CENTER" wrappingWidth="302.2383575439453">
+               <font>
+                  <Font name="Aharoni Bold" size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="p1" prefHeight="26.0" prefWidth="573.0" promptText="parameter 1" />
+            <TextField fx:id="p2" prefHeight="26.0" prefWidth="331.0" promptText="parameter 2" />
+            <Button mnemonicParsing="false" onAction="#checkParametrs" prefHeight="28.0" prefWidth="302.0" style="-fx-background-color: #00547b;" text="check parameters" textFill="WHITE">
+               <font>
+                  <Font name="Aharoni Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="produceReportBtn" disable="true" mnemonicParsing="false" onAction="#produceReport" prefHeight="28.0" prefWidth="318.0" style="-fx-background-color: #00547b;" text="Produce report" textFill="WHITE">
+               <font>
+                  <Font name="Aharoni Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </VBox>
+      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="74.0" style="-fx-background-color: #00547b;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Aharoni Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

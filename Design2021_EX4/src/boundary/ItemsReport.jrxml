@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ItemsReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="22f64f1e-93b3-4b10-b391-e65ec1fe6c17">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UCA"/>
+	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="Parameter2" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_Item.ItemName, Count(tbl_Item.ItemNum) AS num FROM tbl_Flight INNER JOIN (tbl_Item INNER JOIN tbl_ItemBySupplierInFlight ON tbl_Item.ItemNum = tbl_ItemBySupplierInFlight.ItemNum) ON tbl_Flight.FlightNum =  tbl_ItemBySupplierInFlight.FlightNum 
+			WHERE [tbl_Flight].[DepartureAirportCode] = $P{Parameter1} OR [tbl_Flight].[DestinationAirportCode] = $P{Parameter2} AND (((Month([tbl_Flight].[DepartureTime]))=Month(Date()))) OR (((Month([tbl_Flight].[LandingTime]))=Month(Date())))
+			GROUP BY tbl_Item.ItemName]]>
+	</queryString>
+	<field name="ItemName" class="java.lang.String"/>
+	<field name="num" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="30" uuid="fee344ae-044c-4e24-ac5a-ef9fa22134f0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="90" y="19" width="380" height="40" uuid="bc1f2b1e-427b-47a9-9e24-72960e6293a0"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Items In Flight Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="280" y="0" width="280" height="30" uuid="93119a3d-3b97-4965-9ff3-3562c3134fb8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0baf94f-31f9-46c4-b431-c762d255cd59"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Aharoni" size="18"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="30" uuid="b9c46b79-31fa-455f-9c9b-8e72b33b4b2e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8e9d7de7-3a62-4c3e-be12-7b72c8ef5e08"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Aharoni" size="18"/>
+				</textElement>
+				<text><![CDATA[ItemName]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="280" y="0" width="280" height="30" uuid="fff1e975-85ea-40e3-8a4c-f813c1497ef5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0baf94f-31f9-46c4-b431-c762d255cd59"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="280" height="30" uuid="590ff8f5-24e6-4d8b-9efa-57c3bd6f526e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8e9d7de7-3a62-4c3e-be12-7b72c8ef5e08"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ItemName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="230" y="12" width="100" height="30" uuid="2ab9c998-1003-48bf-908b-4f66aaa8e913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

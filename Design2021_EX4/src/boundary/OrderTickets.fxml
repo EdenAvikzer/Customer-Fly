@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.OrderTickets">
+   <center>
+      <AnchorPane prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="429.0" layoutX="576.0" layoutY="285.0" stroke="#00426e" strokeType="INSIDE" width="410.0" />
+            <ListView fx:id="itemsInFlightList" layoutX="10.0" layoutY="285.0" prefHeight="68.0" prefWidth="548.0" />
+            <Label layoutX="11.0" layoutY="254.0" prefHeight="31.0" prefWidth="402.0" text="List of entertaiment items in flights " textFill="#00547b">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ListView fx:id="flightsList" layoutX="9.0" layoutY="116.0" prefHeight="138.0" prefWidth="978.0" />
+            <Button layoutX="7.0" layoutY="673.0" mnemonicParsing="false" onAction="#addTicketToOrder" prefHeight="30.0" prefWidth="553.0" style="-fx-background-color: #016610;" text="ADD TICKET" textFill="WHITE">
+               <font>
+                  <Font name="Aharoni Bold" size="14.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="comboClass" layoutX="105.0" layoutY="357.0" prefHeight="30.0" prefWidth="170.0" promptText="Select Class" />
+            <ComboBox fx:id="comboMeal" layoutX="387.0" layoutY="357.0" prefHeight="30.0" prefWidth="170.0" promptText="Select Meal" />
+            <Label layoutX="11.0" layoutY="350.0" prefHeight="43.0" prefWidth="94.0" text="Select Class" textFill="#00547b">
+               <font>
+                  <Font name="Aharoni Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="39.0" prefHeight="30.0" prefWidth="222.0" text="Enter Passport Number:" textFill="#00547b">
+               <font>
+                  <Font name="Aharoni Bold" size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="ticketsInOrder" layoutX="594.0" layoutY="340.0" prefHeight="234.0" prefWidth="372.0" />
+            <Label alignment="CENTER" layoutX="670.0" layoutY="285.0" prefHeight="43.0" prefWidth="222.0" text="Your Order" textAlignment="CENTER" textFill="#00547b" underline="true">
+               <font>
+                  <Font name="Aharoni Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="604.0" layoutY="673.0" mnemonicParsing="false" onAction="#addOrder" prefHeight="30.0" prefWidth="341.0" style="-fx-background-color: #016610;" text="ADD ORDER" textFill="WHITE">
+               <font>
+                  <Font name="Aharoni Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="11.0" layoutY="81.0" prefHeight="27.0" prefWidth="222.0" text="Please select a flight:" textFill="#00547b">
+               <font>
+                  <Font name="Aharoni Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="customerId" layoutX="221.0" layoutY="39.0" prefHeight="30.0" prefWidth="198.0" promptText=" Passport Number" />
+            <Label layoutX="293.0" layoutY="350.0" prefHeight="43.0" prefWidth="94.0" text="Select Meal" textFill="#00547b">
+               <font>
+                  <Font name="Aharoni Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboPayment" layoutX="701.0" layoutY="621.0" prefHeight="30.0" prefWidth="160.0" promptText="Select Method" />
+            <Label alignment="CENTER" layoutX="612.0" layoutY="582.0" prefHeight="43.0" prefWidth="338.0" text="Select Payment Method" textFill="#00547b">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Text fill="#070a0b" layoutX="775.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Aharoni Bold" size="18.0" />
+               </font>
+            </Text>
+            <VBox layoutX="9.0" layoutY="393.0" prefHeight="178.0" prefWidth="550.0" spacing="3.0" style="-fx-border-color: grey;">
+               <children>
+                  <RadioButton fx:id="premuim" mnemonicParsing="false" prefHeight="20.0" prefWidth="536.0" text="Do you want a premuim ticket?">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Label prefHeight="31.0" prefWidth="206.0" text="Baggage weight:" textFill="#00547b">
+                     <font>
+                        <Font name="Aharoni Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="buggage" disable="true" prefHeight="26.0" prefWidth="20.0" promptText="buggage weghit" />
+                  <Label prefHeight="30.0" prefWidth="222.0" text="Add your requests:" textFill="#00547b">
+                     <font>
+                        <Font name="Aharoni Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="reqA" disable="true" prefHeight="30.0" prefWidth="202.0" promptText="Request A" />
+                  <TextField fx:id="reqB" disable="true" prefHeight="30.0" prefWidth="202.0" promptText="Request B" />
+                  <TextField fx:id="reqC" disable="true" prefHeight="30.0" prefWidth="202.0" promptText="Request C" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <Label layoutX="8.0" layoutY="615.0" prefHeight="43.0" prefWidth="116.0" text="Add Relative&#10;**Optional**" textAlignment="CENTER" textFill="#00547b">
+               <font>
+                  <Font name="Aharoni Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="relativePassport" layoutX="114.0" layoutY="621.0" prefHeight="30.0" prefWidth="369.0" promptText="Enter Passport Number" />
+            <Button layoutX="492.0" layoutY="620.0" mnemonicParsing="false" onAction="#addRelative" prefHeight="31.0" prefWidth="69.0" text="Add" />
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <ButtonBar nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="95.0" />
+         </BorderPane.margin>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK YOUR FLIGHT TODAY" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Aharoni Bold" size="48.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="0.21374047257518042" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.003921568859368563" green="0.30980393290519714" blue="0.45098039507865906" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.014999999664723873" green="0.36258333921432495" blue="0.5" opacity="0.6862068772315979" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+   </top>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</BorderPane>
